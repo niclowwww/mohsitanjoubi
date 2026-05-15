@@ -272,7 +272,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -459,7 +459,7 @@ offset_left = 1044.0
 offset_top = -375.0
 offset_right = 4543.0
 offset_bottom = 2254.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="Image" type="Sprite2D" parent="ColorRect3" unique_id=489886444]
 modulate = Color(1, 1, 1, 0)
