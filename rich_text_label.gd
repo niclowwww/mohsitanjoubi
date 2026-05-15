@@ -19,11 +19,14 @@ func _process(delta: float) -> void:
 		char_cooldown -= 1
 		if char_cooldown <= 0:
 			char_cooldown = 2
-			visible_characters += 1
+			if visible_characters < get_parsed_text().length():
+				visible_characters += 1
+				if visible_characters % 2 == 0:
+					$AudioStreamPlayer2D.play()
 
 func next():
 	dialog_active = true
-	if visible_characters >= text.length():
+	if visible_characters >= get_parsed_text().length():
 		index += 1
 		if index < current_dialog.size():
 			text = "[center]" + current_dialog[index]

@@ -6,12 +6,13 @@ extends AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass # Replace with function body."autoplay"
 
 
 
 func _on_area_2d_mouse_entered() -> void:
 	if root.current_state == root.STATES.FOREGROUND:
+		$AudioStreamPlayer2D2.play()
 		scale = Vector2(1.2, 1.2)
 		speed_scale = 2
 
@@ -22,6 +23,8 @@ func _on_area_2d_mouse_exited() -> void:
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_mask == 1:
+		if not $AudioStreamPlayer2D.playing:
+			$AudioStreamPlayer2D.play()
 		animation_player.stop()
 		animation_player.play("click")
 		rich_text_label.next()

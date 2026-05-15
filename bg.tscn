@@ -4,18 +4,23 @@
 [ext_resource type="Script" uid="uid://c5r0enrtgy4gb" path="res://bg.gd" id="1_plmvg"]
 [ext_resource type="SpriteFrames" uid="uid://0rm6tctcfobm" path="res://new_sprite_frames.tres" id="1_t4gw0"]
 [ext_resource type="Shader" uid="uid://brqr880r08vc7" path="res://bg.gdshader" id="2_tuaf8"]
-[ext_resource type="Script" path="res://textbox.gd" id="3_36ycx"]
-[ext_resource type="FontFile" path="res://Handmade Alphabet.otf" id="4_iq1of"]
-[ext_resource type="Texture2D" path="res://heart1.tres" id="5_7sudn"]
+[ext_resource type="Script" uid="uid://0dx4wdtb7bk0" path="res://textbox.gd" id="3_36ycx"]
+[ext_resource type="FontFile" uid="uid://rmyd5l0l5ns7" path="res://Handmade Alphabet.otf" id="4_iq1of"]
+[ext_resource type="Texture2D" uid="uid://ojh27sb8wl5c" path="res://heart1.tres" id="5_7sudn"]
 [ext_resource type="Texture2D" path="res://heart2.tres" id="6_twoho"]
 [ext_resource type="Texture2D" path="res://heart3.tres" id="7_pi0n5"]
-[ext_resource type="Script" path="res://heart.gd" id="8_pi0n5"]
-[ext_resource type="Script" path="res://rich_text_label.gd" id="11_kjpld"]
-[ext_resource type="Texture2D" path="res://image.jpg" id="12_ft7a8"]
-[ext_resource type="Shader" path="res://asd.gdshader" id="12_u25vp"]
-[ext_resource type="VideoStream" uid="uid://doqowo2y4hi6y" path="res://jerma.ogv" id="14_gu4f6"]
-[ext_resource type="Script" path="res://video_stream_player.gd" id="15_1occe"]
-[ext_resource type="Texture2D" path="res://Screenshot 2026-05-15 150905.png" id="16_wfk6n"]
+[ext_resource type="Script" uid="uid://c7wtfq26wow5a" path="res://heart.gd" id="8_pi0n5"]
+[ext_resource type="AudioStream" uid="uid://b8axun5tcxkr1" path="res://unko/1498072246550270143.mp3" id="9_1vej4"]
+[ext_resource type="AudioStream" uid="uid://dm6n4tfla3omy" path="res://unko/1498072814475939840.mp3" id="10_0ohij"]
+[ext_resource type="AudioStream" uid="uid://c5u2xpwktyspd" path="res://unko/1498073276948283402.mp3" id="11_fh3nu"]
+[ext_resource type="Script" uid="uid://b8ibx4mjlbg53" path="res://rich_text_label.gd" id="11_kjpld"]
+[ext_resource type="AudioStream" uid="uid://dknxdovbttyqu" path="res://textplop.wav" id="12_54v48"]
+[ext_resource type="Texture2D" uid="uid://b7i3cw5v6yqvs" path="res://image.jpg" id="12_ft7a8"]
+[ext_resource type="AudioStream" uid="uid://dllu84nxghgq8" path="res://unko/1504842654406545620.mp3" id="12_lvii6"]
+[ext_resource type="Shader" uid="uid://hbc8quolyw1q" path="res://asd.gdshader" id="12_u25vp"]
+[ext_resource type="VideoStream" path="res://jerma.ogv" id="14_gu4f6"]
+[ext_resource type="Script" uid="uid://ingsxi8cxj6y" path="res://video_stream_player.gd" id="15_1occe"]
+[ext_resource type="Texture2D" uid="uid://bb2fnjerwlykw" path="res://Screenshot 2026-05-15 150905.png" id="16_wfk6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pi0n5"]
 size = Vector2(258, 241)
@@ -73,6 +78,14 @@ _data = {
 &"RESET": SubResource("Animation_kjpld"),
 &"click": SubResource("Animation_pi0n5")
 }
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_54v48"]
+streams_count = 4
+stream_0/stream = ExtResource("9_1vej4")
+stream_0/weight = 0.5
+stream_1/stream = ExtResource("10_0ohij")
+stream_2/stream = ExtResource("11_fh3nu")
+stream_3/stream = ExtResource("12_lvii6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e8j8q"]
 shader = ExtResource("2_tuaf8")
@@ -167,6 +180,11 @@ _data = {
 &"start": SubResource("Animation_plmvg")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dsce7"]
+random_pitch = 1.115546
+streams_count = 1
+stream_0/stream = ExtResource("12_54v48")
+
 [sub_resource type="Animation" id="Animation_gu4f6"]
 length = 0.001
 tracks/0/type = "value"
@@ -179,7 +197,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1500, -228)]
+"values": [Vector2(-2000, -228)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -196,7 +214,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1occe"]
 resource_name = "moveinandplay"
-length = 2.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -204,10 +222,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.9333333),
+"times": PackedFloat32Array(0, 2.4666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1500, -228), Vector2(-210, -228)]
+"values": [Vector2(-2000, -228), Vector2(-210, -228)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -216,7 +234,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2),
+"times": PackedFloat32Array(2.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -230,7 +248,7 @@ tracks/2/path = NodePath("Screenshot20260515150905:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2),
+"times": PackedFloat32Array(2.9666667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -362,6 +380,15 @@ script = ExtResource("8_pi0n5")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Heart" unique_id=1492085323]
 libraries/ = SubResource("AnimationLibrary_kjpld")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Heart" unique_id=137047184]
+stream = SubResource("AudioStreamRandomizer_54v48")
+volume_db = -3.714
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Heart" unique_id=1926594792]
+stream = ExtResource("12_54v48")
+volume_db = -8.914
+pitch_scale = 0.63
+
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=236188528]
 offset_left = -1245.0
 offset_top = -373.0
@@ -390,7 +417,7 @@ autoplay = &"intro"
 offset_left = -221.0
 offset_top = 196.0
 offset_right = 866.0
-offset_bottom = 396.0
+offset_bottom = 565.0
 mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 13
@@ -402,10 +429,14 @@ visible_characters = 0
 visible_ratio = 0.0
 script = ExtResource("11_kjpld")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RichTextLabel" unique_id=1655429511]
+stream = SubResource("AudioStreamRandomizer_dsce7")
+volume_db = -3.875
+
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=139084370]
-offset_left = -1500.0
+offset_left = -2000.0
 offset_top = -228.0
-offset_right = 420.0
+offset_right = -80.0
 offset_bottom = 852.0
 scale = Vector2(0.56, 0.56)
 stream = ExtResource("14_gu4f6")
@@ -426,8 +457,8 @@ libraries/ = SubResource("AnimationLibrary_dsce7")
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=359898833]
 offset_left = 1044.0
 offset_top = -375.0
-offset_right = 2507.0
-offset_bottom = 563.0
+offset_right = 3762.0
+offset_bottom = 1949.0
 color = Color(0, 0, 0, 0)
 
 [node name="Image" type="Sprite2D" parent="ColorRect3" unique_id=489886444]
